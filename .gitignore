@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Unit test / coverage reports
+.coverage
+.htmlcov/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment directories
+.env
+.venv
+env/
+venv/
+
+# Database
+*.sqlite3
+
+# Log files
+*.log
+
+# PyCharm project settings
+.idea/
+
+# VS Code settings
+.vscode/
