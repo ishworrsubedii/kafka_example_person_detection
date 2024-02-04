@@ -3,12 +3,15 @@ from ultralytics import YOLO
 
 
 class DetectionService:
+    """
+    Class to detect person from an image or video
+    """
     def __init__(self, model_path: str):
         self.model_instance = YOLO(model_path)
 
     def detect_video(self, video_path: str, confidence_threshold: float, nms_threshold: float):
         """
-        Detects vehicle number plates from a video in real-time and yields detections one at a time
+        Detect person from a video
         :param video_path:  video path to be passed
         :param confidence_threshold:  confidence threshold
         :param nms_threshold: nms threshold
@@ -28,7 +31,7 @@ class DetectionService:
                     bbox = bboxes[0].int().tolist()
                     x1, y1, x2, y2 = bbox
                     cropped = frame[y1:y2, x1:x2]
-                    yield (prediction, cropped)
+                    yield (prediction, cropped)  # Return the prediction and cropped frame
                 except Exception as e:
                     print(e)
         cap.release()
