@@ -49,27 +49,45 @@ bin/kafka-server-start.sh config/server.properties
 
 ## LETS START OUR FIRST KAFKA PRODUCER AND CONSUMER
 
+### Anacond environment
+```bash
+conda create -n kafka python=3.10
+```
+
+```bash
+conda activate kafka
+```
+### Install the requirements
+
+```bash
+pip install -r requirements.txt
+```
+### Run the main file
 ```bash
 python manin.py
 ```
-OR 
-Run manually with the configuration of the root directory of the project.
+
+OR
+run manually by the configuration of the root directory of the project.
 
 ## Data Flow:
 
 **1. Producer:**
+
 - Receives video, image, or file paths.
 - Sends paths to Kafka topics.
 
 **2. Consumer:**
 
 Subscribes to Kafka topics.
+
 - Consumes paths.
 - Triggers object detection (using DetectionService) for videos.
 - Saves cropped images or prediction results based on configuration.
-## Tutorials
-- [KAFKA INSTALL](https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-20-04)
 
+## Tutorials
+
+- [KAFKA INSTALL](https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-20-04)
 
 ## Contributing
 
