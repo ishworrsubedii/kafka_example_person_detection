@@ -4,6 +4,10 @@ from src.kafka_pipeline.object_detection import DetectionService
 
 
 def main():
+    """
+    Main function to run the pipeline
+    :return:
+    """
     bootstrap_servers = 'localhost:9092'
     topic_name = 'video_paths'
     group_id = 'group1'
@@ -21,7 +25,6 @@ def main():
     producer.send_image_save(save_image_path)
 
     consumer.consume_video_path(save_image_path=True, save_pred_info=True)
-
 
 
 if __name__ == "__main__":
